@@ -1,0 +1,13 @@
+name: cc-audit
+on:
+  pull_request:
+    paths: [ 'CLAUDE.md', 'AGENTS.md' ]
+  push:
+    paths: [ 'CLAUDE.md', 'AGENTS.md' ]
+  workflow_dispatch:
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: sisyphusse1-ops/cc-audit@v1
